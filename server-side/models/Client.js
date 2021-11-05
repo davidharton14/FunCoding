@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const Client = new mongoose.Schema({
+const ClientSchema = new mongoose.Schema({
   nume: String,
   prenume:String,
   email: String,
@@ -7,4 +7,4 @@ const Client = new mongoose.Schema({
   parola: String,
 });
 
-module.exports = mongoose.model("Client", Client);
+module.exports = mongoose.model("customer", ClientSchema);

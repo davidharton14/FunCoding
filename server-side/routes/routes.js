@@ -6,29 +6,29 @@ app.use(cors());
 app.use(bodyParser.json());
 const { db } = require("../database/db");
 
-app.post("/api/users", (req, res) => {
+app.post("/api/clienti", (req, res) => {
     let data = req.body;
-    db.addUser(res, data);
+    db.addClient(res, data);
   });
 app.post("/api/login", (req, res) => {
     let data = req.body;
     db.login(res, data);
   });
 
-  app.put("/api/users/:id", (req, res) => {
+  app.put("/api/clienti/:id", (req, res) => {
     let { id } = req.params;
     let data = req.body;
-    db.updateUser(res, id, data);
+    db.updateClient(res, id, data);
   });
-  app.get("/api/users/:id", (req, res) => {
+  app.get("/api/clienti/:id", (req, res) => {
     let { id } = req.params;
-    db.getUser(res, id);
+    db.getClient(res, id);
   });
-  app.get("/api/users", (req, res) => {
-    db.getUsers(res);
+  app.get("/api/clienti", (req, res) => {
+    db.getClient(res);
   });
-  app.delete("/api/users/:id", (req, res) => {
+  app.delete("/api/clienti/:id", (req, res) => {
     let { id } = req.params;
-    db.deleteUser(res, id);
+    db.deleteClient(res, id);
   }); 
 exports.app = app;

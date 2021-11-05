@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const MONGO_URL = "mongodb+srv://david:david@cluster0.axzcq.mongodb.net/asd";
+const MONGO_URL = "mongodb+srv://david:david@cluster0.axzcq.mongodb.net/FunCoding";
 const Client = require("../models/Client");
 class Controller {
   constructor() {
@@ -41,7 +41,7 @@ class Controller {
     );
   }
   updateClient(res, id, data) {
-    User.updateOne(
+    Client.updateOne(
       {
         _id: id,
       },
@@ -54,7 +54,7 @@ class Controller {
           user: updateUser,
         });
       }
-    );
+    );  
   }
   getClient(res, id) {
     Client.findOne(
@@ -83,8 +83,8 @@ class Controller {
       }
     );
   }
-  deleteClienti(res, id) {
-    User.deleteOne(
+  deleteClient(res, id) {
+    Client.deleteOne(
       {
         _id: id,
       },
