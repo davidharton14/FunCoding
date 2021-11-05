@@ -20,7 +20,7 @@
           ></v-text-field>
           <v-text-field
             label="Parola"
-            type="parola"
+            type="password"
             v-model="loginData.parola"
           ></v-text-field>
         </v-card-text>
@@ -60,7 +60,7 @@
           ></v-text-field>
           <v-text-field
             label="Parola"
-            type="parola"
+            type="password"
             v-model="registerData.parola"
           ></v-text-field>
         </v-card-text>
@@ -90,7 +90,7 @@ export default {
     login() {
       let data = {
         email: this.loginData.email,
-        parola: this.loginData.parola,
+        parola: this.loginData.password,
       };
       axios
         .post("http://localhost:8080/api/login", data)
@@ -112,7 +112,7 @@ export default {
         prenume: this.registerData.prenume,
         email: this.registerData.email,
         telefon: this.registerData.telefon,
-        parola: this.registerData.parola,
+        parola: this.registerData.password,
       };
       axios.post("http://localhost:8080/api/clienti", data).then((res) => {
         console.log(res.data.user);

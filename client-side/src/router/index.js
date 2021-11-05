@@ -3,6 +3,8 @@ import VueRouter from 'vue-router'
 import Acasa from '../components/Acasa.vue'
 import Client from '../components/Client.vue'
 import Login from "../components/Login";
+import Restaurante from "../components/Restaurante";
+import Rezervari from "../components/Rezervari";
 Vue.use(VueRouter)
 
 const routes = [
@@ -27,7 +29,15 @@ const routes = [
     path: '/login',
     name:"Login",
     component: Login
-  }
+  },
+  {
+    path: '/restaurante',
+    component: Restaurante
+  },
+  {
+    path: '/rezervari',
+    component: Rezervari
+  },
 ]
 
 const router = new VueRouter({
