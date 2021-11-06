@@ -3,11 +3,79 @@
     <v-app-bar app color="green accent-4">
       <h2>FOOD WASTE</h2>
     <v-layout row wrap justify-end>
-      <v-btn>Rezervari</v-btn> 
-      <v-btn @click="restaurante()">Restaurante</v-btn>  
-      <v-btn @click="logout()">Logout</v-btn>  
+      <v-tabs  center-active background-color="green accent-4">
+      <v-tab active>Rezervari</v-tab> 
+      <v-tab @click="restaurante()">Restaurante</v-tab>  
+      <v-tab @click="logout()">Logout</v-tab> 
+      </v-tabs>
     </v-layout>
     </v-app-bar>
+   <v-layout row wrap justify-center align-start>
+      <v-card v-for="(rezervare, index) in rezervari" :key="index">
+        <v-card-text>
+          <h3>{{ rezervare.denumire_restaurant }}</h3>
+          <p>{{ rezervare.denumire_mancare }}</p>
+          
+          <v-btn
+            class="ml-2"
+            color="primary"
+            fab
+            small
+            @click="noteToEdit(index)"
+          >
+            <v-icon color="white">mdi-square-edit-outline</v-icon>
+          </v-btn>
+          <v-btn
+            class="ml-2"
+            color="primary"
+            fab
+            small
+            @click="
+              deleteNotToAsk = true;
+              noteId = note._id;
+            "
+          >
+            <v-icon color="white">mdi-delete</v-icon>
+          </v-btn>
+        </v-card-text>
+      </v-card>
+      <template>
+        <div class="text-center">
+          <v-dialog v-model="deleteNotToAsk" width="500">
+            <v-card>
+              <h4>Are you sure?</h4>
+              <v-btn color="success" @click="deleteNote(note._id)">Yes</v-btn>
+              <v-btn color="error" @click="deleteNotToAsk = false"
+                >Cancel</v-btn
+              >
+            </v-card>
+          </v-dialog>
+          <v-dialog v-model="dialog" width="500">
+            <v-card>
+              <v-card-title class="text-h5 grey lighten-2">
+                <h3 align-center>Editeaza nota</h3>
+                <v-btn color="primary" text @click="dialog = false"> </v-btn>
+              </v-card-title>
+              <v-card-text>
+                <v-text-field
+                  label="Title"
+                  v-model="noteEdit.title"
+                ></v-text-field>
+                <v-text-field
+                  label="Content"
+                  v-model="noteEdit.content"
+                ></v-text-field>
+                <v-btn color="error" @click="noteEdit.state = true">DONE</v-btn>
+              </v-card-text>
+              <v-card-actions>
+                <v-btn color="primary" @click="updateNote(noteEdit._id)"
+                  >Update note</v-btn
+                >
+              </v-card-actions>
+            </v-card>
+          </v-dialog>
+        </div>
+      </template></v-layout>
   </v-layout>
 </template> 
     </v-layout>
@@ -21,13 +89,13 @@ export default {
   },
   data() {
     return {
-      user: new Object(),
-      notes: [],
+      client: new Object(),
+      rezervari: [],
       deleteNotToAsk: false,
       noteEdit: new Object(),
       dialog: false,
       noteId: null,
-      newNote: false,
+      newRezervare: false,
       noteToCreate:new Object(),
       chooseColor:false,
       currentTheme:localStorage.getItem('theme-color'),
@@ -44,9 +112,9 @@ export default {
   },
   methods: {
     getNotes() {
-      var id = this.user._id;
-      axios.get(`http://localhost:8083/api/notes/${id}`).then((res) => {
-        this.notes = res.data.notes;
+      var id = this.client._id;
+      axios.get(`http://localhost:8080/api/rezervari/${id}`).then((res) => {
+        this.rezervari = res.data.rezervari;
       });
     },
     updateNote(id) {
@@ -112,9 +180,6 @@ export default {
   },
   restaurante(){
     this.$router.push("/restaurante");
-  },
-  rezervari(){
-    this.$router.push("/rezervari");
   },
   logout(){
     localStorage.clear()

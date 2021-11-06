@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
 const RezervareSchema = new mongoose.Schema({
-  nume: String,
-  prenume:String,
+  denumire_restaurant: String,
   denumire_mancare: String,
-  denumire_restaurant:String,
-  data: String,
+  cantitate:String,
+  pret:String,
+  id_client:String
 });
 
 module.exports = mongoose.model("reservation", RezervareSchema);

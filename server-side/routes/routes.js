@@ -31,4 +31,23 @@ app.post("/api/login", (req, res) => {
     let { id } = req.params;
     db.deleteClient(res, id);
   }); 
+  app.post("/api/rezervari/:clientId", (req, res) => {
+    let data = req.body;
+    let { clientId } = req.params;
+    data.id_user = clientId;
+    db.addRezervare(res, data);
+  });
+  app.get("/api/rezervari/:clientId", (req, res) => {
+    let { clientId } = req.params;
+    db.getRezervare(res, clientId);
+  });
+  app.put("/api/rezervari/:id", (req, res) => {
+    let { id } = req.params;
+    let data = req.body;
+    db.updateRezervare(res, id, data);
+  });
+  app.delete("/api/rezervari/:id", (req, res) => {
+    let { id } = req.params;
+    db.deleteRezervare(res, id);
+  });
 exports.app = app;

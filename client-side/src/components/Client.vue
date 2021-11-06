@@ -3,9 +3,11 @@
     <v-app-bar app color="green accent-4">
       <h2>FOOD WASTE</h2>
     <v-layout row wrap justify-end>
-      <v-btn @click="rezervari()">Rezervari</v-btn> 
-      <v-btn @click="restaurante()">Restaurante</v-btn>  
-      <v-btn @click="logout()">Logout</v-btn>  
+       <v-tabs center-active background-color="green accent-4">
+          <v-tab @click="rezervari()">Rezervari</v-tab>
+          <v-tab @click="restaurante()">Restaurante</v-tab>
+          <v-tab @click="logout()">Logout</v-tab>
+        </v-tabs>
     </v-layout>
     </v-app-bar>
   </v-layout>

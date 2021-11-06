@@ -1,5 +1,16 @@
 <template>
   <v-layout row wrap justify-center align-center class="main">
+    <v-app-bar app color="green accent-4">
+      <h2>FOOD WASTE</h2>
+      <v-layout row wrap justify-end>
+        <v-tabs center-active background-color="green accent-4">
+          <v-tab>Acasa</v-tab>
+          <v-tab @click="login()"> Client </v-tab>
+          <v-tab @click="login()"> Restaurant </v-tab>
+          <v-tab @click="contact()"> Contact </v-tab>
+        </v-tabs>
+      </v-layout>
+    </v-app-bar>
     <v-layout
       row
       wrap

@@ -5,6 +5,7 @@ import Client from '../components/Client.vue'
 import Login from "../components/Login";
 import Restaurante from "../components/Restaurante";
 import Rezervari from "../components/Rezervari";
+import ProdusePage1 from "../components/ProdusePage1";
 Vue.use(VueRouter)
 
 const routes = [
@@ -37,6 +38,10 @@ const routes = [
   {
     path: '/rezervari',
     component: Rezervari
+  },
+  {
+    path: '/produse_page_1',
+    component: ProdusePage1
   },
 ]
 

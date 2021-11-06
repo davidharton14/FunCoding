@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const MONGO_URL = "mongodb+srv://david:david@cluster0.axzcq.mongodb.net/FunCoding";
 const Client = require("../models/Client");
+const Rezervare = require("../models/Rezervare");
 class Controller {
   constructor() {
     this.connect();
@@ -97,5 +98,60 @@ class Controller {
       }
     );
   } 
+  addRezervare(res, data) {
+    Rezervare.create(data, (err, newNote) => {
+      if (err) throw err;
+      res.json({
+        status: 200,
+        message: "Created",
+        note: newNote,
+      });
+    });
+  }
+  getRezervare(res, userId) {
+    Rezervare.find(
+      {
+        id_user: userId,
+      },
+      (err, rezervare) => {
+        if (err) throw err;
+        res.json({
+          status: 200,
+          message: "ok",
+          rezervare,
+        });
+      }
+    );
+  }
+  updateRezervare(res, id, data) {
+    Rezervare.updateOne(
+      {
+        _id: id,
+      },
+      data,
+      (err, updateRezervare) => {
+        if (err) throw err;
+        res.json({
+          status: 200,
+          message: "Updated",
+          note: updateRezervare,
+        });
+      }
+    );
+  }
+  deleteRezervare(res, id) {
+    Rezervare.deleteOne(
+      {
+        _id: id,
+      },
+      (err) => {
+        if (err) throw err;
+        res.json({
+          status: 200,
+          message: "Deleted",
+        });
+      }
+    );
+  }
 }
 exports.db = new Controller();

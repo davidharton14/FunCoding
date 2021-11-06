@@ -2,17 +2,20 @@
   <v-layout row wrap justify-center align-center id="main">
     <v-app-bar app color="green accent-4">
       <h2>FOOD WASTE</h2>
-    <v-layout row wrap justify-end>
-      <v-btn @click="rezervari()">Rezervari</v-btn> 
-      <v-btn>Restaurante</v-btn>  
-      <v-btn @click="logout()">Logout</v-btn> 
+    <v-layout>
+      <v-tabs background-color="green accent-4">
+      <v-tab @click="rezervari()">Rezervari</v-tab> 
+      <v-tab active >Restaurante</v-tab>  
+      <v-tab @click="logout()">Logout</v-tab> 
+      </v-tabs>
     </v-layout>
     </v-app-bar>
       <v-card 
+      
     :loading="loading"
     max-width="374"
     class="mr-10"
-  >
+  > 
     <template slot="progress">
       <v-progress-linear
         color="deep-purple"
@@ -23,10 +26,10 @@
 
     <v-img
       height="250"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+      src="../assets/kfc.jpg"
     ></v-img>
 
-    <v-card-title>Cafe Badilico</v-card-title>
+    <v-card-title>Kentucky Fried Chicken - KFC Romania</v-card-title>
 
     <v-card-text>
       <v-row
@@ -48,39 +51,20 @@
       </v-row>
 
       <div class="my-4 text-subtitle-1">
-        $ • Italian, Cafe
+        $ • Romania, Restaurant
       </div>
 
-      <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+      <div>KFC is an American fast food restaurant chain headquartered in Louisville, Kentucky that specializes in fried chicken. It is the world's second-largest restaurant chain after McDonald's, with 22,621 locations globally in 150 countries as of December 2019. </div>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
-
-    <v-card-title>Tonight's availability</v-card-title>
-
-    <v-card-text>
-      <v-chip-group
-        v-model="selection"
-        active-class="deep-purple accent-4 white--text"
-        column
-      >
-        <v-chip>5:30PM</v-chip>
-
-        <v-chip>7:30PM</v-chip>
-
-        <v-chip>8:00PM</v-chip>
-
-        <v-chip>9:00PM</v-chip>
-      </v-chip-group>
-    </v-card-text>
-
     <v-card-actions>
       <v-btn
         color="deep-purple lighten-2"
         text
-        @click="reserve"
+        @click="produse1()"
       >
-        Reserve
+        CLICK
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -99,7 +83,7 @@
 
     <v-img
       height="250"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+      src="../assets/tr.jpg"
     ></v-img>
 
     <v-card-title>Cafe Badilico</v-card-title>
@@ -131,32 +115,13 @@
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
-
-    <v-card-title>Tonight's availability</v-card-title>
-
-    <v-card-text>
-      <v-chip-group
-        v-model="selection"
-        active-class="deep-purple accent-4 white--text"
-        column
-      >
-        <v-chip>5:30PM</v-chip>
-
-        <v-chip>7:30PM</v-chip>
-
-        <v-chip>8:00PM</v-chip>
-
-        <v-chip>9:00PM</v-chip>
-      </v-chip-group>
-    </v-card-text>
-
     <v-card-actions>
       <v-btn
         color="deep-purple lighten-2"
         text
         @click="reserve"
       >
-        Reserve
+        CLICK
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -175,7 +140,7 @@
 
     <v-img
       height="250"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+      src="../assets/cb.jpg"
     ></v-img>
 
     <v-card-title>Cafe Badilico</v-card-title>
@@ -207,32 +172,13 @@
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
-
-    <v-card-title>Tonight's availability</v-card-title>
-
-    <v-card-text>
-      <v-chip-group
-        v-model="selection"
-        active-class="deep-purple accent-4 white--text"
-        column
-      >
-        <v-chip>5:30PM</v-chip>
-
-        <v-chip>7:30PM</v-chip>
-
-        <v-chip>8:00PM</v-chip>
-
-        <v-chip>9:00PM</v-chip>
-      </v-chip-group>
-    </v-card-text>
-
     <v-card-actions>
       <v-btn
         color="deep-purple lighten-2"
         text
         @click="reserve"
       >
-        Reserve
+        CLICK
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -251,10 +197,10 @@
 
     <v-img
       height="250"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+      src="../assets/la.jpg"
     ></v-img>
 
-    <v-card-title>Cafe Badilico</v-card-title>
+    <v-card-title>Kentucky Fried Chicken - KFC Romania</v-card-title>
 
     <v-card-text>
       <v-row
@@ -269,10 +215,6 @@
           readonly
           size="14"
         ></v-rating>
-
-        <div class="grey--text ms-4">
-          4.5 (413)
-        </div>
       </v-row>
 
       <div class="my-4 text-subtitle-1">
@@ -283,32 +225,13 @@
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
-
-    <v-card-title>Tonight's availability</v-card-title>
-
-    <v-card-text>
-      <v-chip-group
-        v-model="selection"
-        active-class="deep-purple accent-4 white--text"
-        column
-      >
-        <v-chip>5:30PM</v-chip>
-
-        <v-chip>7:30PM</v-chip>
-
-        <v-chip>8:00PM</v-chip>
-
-        <v-chip>9:00PM</v-chip>
-      </v-chip-group>
-    </v-card-text>
-
     <v-card-actions>
       <v-btn
         color="deep-purple lighten-2"
         text
         @click="reserve"
       >
-        Reserve
+        CLICK
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -327,7 +250,7 @@
 
     <v-img
       height="250"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+      src="../assets/mc.jpg"
     ></v-img>
 
     <v-card-title>Cafe Badilico</v-card-title>
@@ -360,31 +283,13 @@
 
     <v-divider class="mx-4"></v-divider>
 
-    <v-card-title>Tonight's availability</v-card-title>
-
-    <v-card-text>
-      <v-chip-group
-        v-model="selection"
-        active-class="deep-purple accent-4 white--text"
-        column
-      >
-        <v-chip>5:30PM</v-chip>
-
-        <v-chip>7:30PM</v-chip>
-
-        <v-chip>8:00PM</v-chip>
-
-        <v-chip>9:00PM</v-chip>
-      </v-chip-group>
-    </v-card-text>
-
     <v-card-actions>
       <v-btn
         color="deep-purple lighten-2"
         text
         @click="reserve"
       >
-        Reserve
+        CLICK
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -403,7 +308,7 @@
 
     <v-img
       height="250"
-      src="https://cdn.vuetifyjs.com/images/cards/cooking.png"
+      src="../assets/mc.jpg"
     ></v-img>
 
     <v-card-title>Cafe Badilico</v-card-title>
@@ -435,32 +340,13 @@
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
-
-    <v-card-title>Tonight's availability</v-card-title>
-
-    <v-card-text>
-      <v-chip-group
-        v-model="selection"
-        active-class="deep-purple accent-4 white--text"
-        column
-      >
-        <v-chip>5:30PM</v-chip>
-
-        <v-chip>7:30PM</v-chip>
-
-        <v-chip>8:00PM</v-chip>
-
-        <v-chip>9:00PM</v-chip>
-      </v-chip-group>
-    </v-card-text>
-
     <v-card-actions>
       <v-btn
         color="deep-purple lighten-2"
         text
         @click="reserve"
       >
-        Reserve
+        CLICK
       </v-btn>
     </v-card-actions>
   </v-card>
@@ -484,8 +370,8 @@ export default {
       noteEdit: new Object(),
       dialog: false,
       noteId: null,
-      newNote: false,
-      noteToCreate:new Object(),
+      newRezervare: false,
+      rezervareToCreate:new Object(),
       chooseColor:false,
       currentTheme:localStorage.getItem('theme-color'),
       color:new Object(),
@@ -530,17 +416,17 @@ export default {
         this.deleteNotToAsk = false;
       });
     },
-    createNote(){
+    createRezervare(){
       let data={
-        title:this.noteToCreate.title,
-        content:this.noteToCreate.content
+        denumire_mancare:this.rezervareToCreate.denumire_mancare,
+        contitate:this.rezervareToCreate.contitate,
+        pret:this.rezervareToCreate.pret
       }
-      let userId=this.user._id
-      axios.post(`http://localhost:8083/api/notes/${userId}`,data)
+      let clientId=this.client._id
+      axios.post(`http://localhost:8080/api/rezervari/${clientId}`,data)
       .then((res)=>{
          console.log(res.data.message)
-         this.newNote=false
-         this.getNotes()
+         this.newRezervare=false
       })
   },
   switchTheme(theme,index){
@@ -576,8 +462,10 @@ export default {
   logout(){
     localStorage.clear()
     this.$router.push({name:"Login"})
-
-  }
+  },
+  produse1(){
+    this.$router.push("/produse_page_1");
+  },
 }
 }
 </script>
@@ -589,6 +477,5 @@ export default {
 h2 {
   color: white;
 }
-
 
 </style>
