@@ -135,6 +135,9 @@ export default {
     acasa() {
       this.$router.push("/");
     },
+    login() {
+      this.$router.push("/login");
+    },
   },
 };
 </script>

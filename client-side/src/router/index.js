@@ -8,6 +8,8 @@ import Rezervari from "../components/Rezervari";
 import ProdusePage1 from "../components/ProdusePage1";
 import LoginRestaurant from "../components/LoginRestaurant";
 import Restaurant from "../components/Restaurant";
+import Produse from "../components/Produse";
+import Home from "../components/Home";
 Vue.use(VueRouter)
 
 const routes = [
@@ -47,11 +49,20 @@ const routes = [
   },
   {
     path: '/login_restaurant',
+    name:"LoginRestaurant",
     component: LoginRestaurant
   },
   {
     path: '/restaurant',
     component: Restaurant
+  },
+  {
+    path: '/home',
+    component: Home
+  },
+  {
+    path: '/produse',
+    component: Produse
   },
 ]
 
