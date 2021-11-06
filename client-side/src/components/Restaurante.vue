@@ -60,7 +60,7 @@
     <v-divider class="mx-4"></v-divider>
     <v-card-actions>
       <v-btn
-        color="deep-purple lighten-2"
+        color="green accent-4"
         text
         @click="produse1()"
       >
@@ -86,7 +86,7 @@
       src="../assets/tr.jpg"
     ></v-img>
 
-    <v-card-title>Cafe Badilico</v-card-title>
+    <v-card-title>Taverna Racilor Herăstrău</v-card-title>
 
     <v-card-text>
       <v-row
@@ -108,16 +108,16 @@
       </v-row>
 
       <div class="my-4 text-subtitle-1">
-        $ • Italian, Cafe
+        $ • Romania, Restaurant
       </div>
 
-      <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+      <div>Taverna Racilor este un restaurant pescăresc care face livrări la domiciliu. Încearcă preparete din fructe de mare în locația noastră din Herăstrău</div>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
     <v-card-actions>
       <v-btn
-        color="deep-purple lighten-2"
+        color="green accent-42"
         text
         @click="reserve"
       >
@@ -143,7 +143,7 @@
       src="../assets/cb.jpg"
     ></v-img>
 
-    <v-card-title>Cafe Badilico</v-card-title>
+    <v-card-title>Caru' cu bere</v-card-title>
 
     <v-card-text>
       <v-row
@@ -165,16 +165,16 @@
       </v-row>
 
       <div class="my-4 text-subtitle-1">
-        $ • Italian, Cafe
+        $ • Romania, Restaurant
       </div>
 
-      <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+      <div>Tot ce vreţi să ştiţi despre locul preferat al domniilor voastre. Despre locul unde vă puteţi înfrupta din cele mai gustoase bucate şi unde puteţi savura</div>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
     <v-card-actions>
       <v-btn
-        color="deep-purple lighten-2"
+        color="green accent-4"
         text
         @click="reserve"
       >
@@ -200,7 +200,7 @@
       src="../assets/la.jpg"
     ></v-img>
 
-    <v-card-title>Kentucky Fried Chicken - KFC Romania</v-card-title>
+    <v-card-title>Restaurant Dumbrava</v-card-title>
 
     <v-card-text>
       <v-row
@@ -218,16 +218,16 @@
       </v-row>
 
       <div class="my-4 text-subtitle-1">
-        $ • Italian, Cafe
+        $ • Romania, Restaurant
       </div>
 
-      <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+      <div>Cu bune si rele,dar mereu cu drag ,restaurantul nostru,micut ,va asteapta in fiecare zi ,in... Aleea dumbrava minunata, 910021 Calarasi, Romania.</div>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
     <v-card-actions>
       <v-btn
-        color="deep-purple lighten-2"
+        color="green accent-4"
         text
         @click="reserve"
       >
@@ -253,7 +253,7 @@
       src="../assets/mc.jpg"
     ></v-img>
 
-    <v-card-title>Cafe Badilico</v-card-title>
+    <v-card-title>McDonald's</v-card-title>
 
     <v-card-text>
       <v-row
@@ -275,17 +275,17 @@
       </v-row>
 
       <div class="my-4 text-subtitle-1">
-        $ • Italian, Cafe
+        $ • Romania, Restaurant
       </div>
 
-      <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+      <div>Produsul tău preferat, alături de o porție de cartofi și băutura ta favorită. Alege meniul perfect pentru gustul tău!</div>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
 
     <v-card-actions>
       <v-btn
-        color="deep-purple lighten-2"
+        color="green accent-4"
         text
         @click="reserve"
       >
@@ -308,10 +308,10 @@
 
     <v-img
       height="250"
-      src="../assets/mc.jpg"
+      src="../assets/m.jpg"
     ></v-img>
 
-    <v-card-title>Cafe Badilico</v-card-title>
+    <v-card-title>Mesopotamia</v-card-title>
 
     <v-card-text>
       <v-row
@@ -333,16 +333,16 @@
       </v-row>
 
       <div class="my-4 text-subtitle-1">
-        $ • Italian, Cafe
+        $ • omania, Restaurant
       </div>
 
-      <div>Small plates, salads & sandwiches - an intimate setting with 12 indoor seats plus patio seating.</div>
+      <div>Mesopotamia este singurul restaurant de tip fast food din România ce îmbină gustul curcanului și vițel rotisat într-un amestec unic!</div>
     </v-card-text>
 
     <v-divider class="mx-4"></v-divider>
     <v-card-actions>
       <v-btn
-        color="deep-purple lighten-2"
+        color="green accent-4"
         text
         @click="reserve"
       >

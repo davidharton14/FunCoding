@@ -122,8 +122,13 @@ export default {
   logout(){
     localStorage.clear()
     this.$router.push({name:"Login"})
-
-  }
+  },
+  loginRestaurant() {
+      this.$router.push("/login_restaurant");
+    },
+    acasa(){
+      this.$router.push("/");
+    }
 }
 }
 </script>

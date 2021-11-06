@@ -87,14 +87,30 @@
 
     </v-list-item>
 
-    <v-card-actions>
+     <v-card-actions>
+      
       <v-btn
         outlined
-        rounded
         text
+        @click="createRezervare();
+        rezervareToCreate.denumire_restaurant='KFC'
+        rezervareToCreate.denumire_mancare='DUBLU BOOSTER'
+        rezervareToCreate.cantitate='5 bucati'
+        rezervareToCreate.pret='4 lei/bucata'
+        deleteNotToAsk2 = true;
+        "
       >
         REZERVA
       </v-btn>
+       <v-dialog v-model="deleteNotToAsk2" width="500">
+            <v-card>
+              <h4>Ai facut o rezervare!
+              </h4>
+              <v-btn color="success" @click="deleteNotToAsk2 = false"
+                >OK</v-btn
+              >
+            </v-card>
+          </v-dialog>
     </v-card-actions>
   </v-card>
    <v-card
@@ -122,13 +138,30 @@
     ></v-img>
     </v-list-item>
 
-    <v-card-actions>
+   <v-card-actions>
+      
       <v-btn
         outlined
         text
+        @click="createRezervare();
+        rezervareToCreate.denumire_restaurant='KFC'
+        rezervareToCreate.denumire_mancare='DUBLU HOT BOOSTER'
+        rezervareToCreate.cantitate='15 bucati'
+        rezervareToCreate.pret='4 lei/bucata'
+        deleteNotToAsk3 = true;
+        "
       >
         REZERVA
       </v-btn>
+       <v-dialog v-model="deleteNotToAsk3" width="500">
+            <v-card>
+              <h4>Ai facut o rezervare!
+              </h4>
+              <v-btn color="success" @click="deleteNotToAsk3 = false"
+                >OK</v-btn
+              >
+            </v-card>
+          </v-dialog>
     </v-card-actions>
   </v-card>
    <v-card
@@ -156,14 +189,32 @@
     ></v-img>
     </v-list-item>
 
-    <v-card-actions>
+   <v-card-actions>
+      
       <v-btn
         outlined
         text
+        @click="createRezervare();
+        rezervareToCreate.denumire_restaurant='KFC'
+        rezervareToCreate.denumire_mancare='ZINGER BURGER'
+        rezervareToCreate.cantitate='11 bucati'
+        rezervareToCreate.pret='5 lei/bucata'
+        deleteNotToAsk4 = true;
+        "
       >
         REZERVA
       </v-btn>
-    </v-card-actions>
+       <v-dialog v-model="deleteNotToAsk4" width="500">
+            <v-card>
+              <h4>Ai facut o rezervare!
+              </h4>
+              <v-btn color="success" @click="deleteNotToAsk4 = false"
+                >OK</v-btn
+              >
+            </v-card>
+          </v-dialog>
+          </v-card-actions>
+
   </v-card>
    <v-card
     class="mx-auto"
@@ -190,13 +241,30 @@
     ></v-img>
     </v-list-item>
 
-    <v-card-actions>
+      <v-card-actions>
+      
       <v-btn
         outlined
         text
+        @click="createRezervare();
+        rezervareToCreate.denumire_restaurant='KFC'
+        rezervareToCreate.denumire_mancare='FILLET BURGER'
+        rezervareToCreate.cantitate='13 bucati'
+        rezervareToCreate.pret='4 lei/bucata'
+        deleteNotToAsk5 = true;
+        "
       >
         REZERVA
       </v-btn>
+       <v-dialog v-model="deleteNotToAsk5" width="500">
+            <v-card>
+              <h4>Ai facut o rezervare!
+              </h4>
+              <v-btn color="success" @click="deleteNotToAsk5 = false"
+                >OK</v-btn
+              >
+            </v-card>
+          </v-dialog>
     </v-card-actions>
   </v-card>
    <v-card
@@ -224,13 +292,30 @@
     ></v-img>
     </v-list-item>
 
-    <v-card-actions>
+   <v-card-actions>
+      
       <v-btn
         outlined
         text
+        @click="createRezervare();
+        rezervareToCreate.denumire_restaurant='KFC'
+        rezervareToCreate.denumire_mancare='TWISTER VEGETARIAN'
+        rezervareToCreate.cantitate='9 bucati'
+        rezervareToCreate.pret='4 lei/bucata'
+        deleteNotToAsk6 = true;
+        "
       >
         REZERVA
       </v-btn>
+       <v-dialog v-model="deleteNotToAsk6" width="500">
+            <v-card>
+              <h4>Ai facut o rezervare!
+              </h4>
+              <v-btn color="success" @click="deleteNotToAsk6 = false"
+                >OK</v-btn
+              >
+            </v-card>
+          </v-dialog>
     </v-card-actions>
   </v-card>
   </v-layout>
@@ -250,18 +335,15 @@ export default {
       client: new Object(),
       notes: [],
       deleteNotToAsk: false,
-      noteEdit: new Object(),
       dialog: false,
       noteId: null,
       newRezervare: false,
       rezervareToCreate:new Object(),
-      chooseColor:false,
-      currentTheme:localStorage.getItem('theme-color'),
-      color:new Object(),
-      task:"",
-      tasks:[],
-      editedTask:null,
-      drawer: null,
+      deleteNotToAsk2:false,
+      deleteNotToAsk3:false,
+      deleteNotToAsk4:false,
+      deleteNotToAsk5:false,
+      deleteNotToAsk6:false
     };
   },
   mounted() {

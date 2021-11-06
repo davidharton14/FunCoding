@@ -22,7 +22,7 @@
     >
       <v-card color="white">
         <v-card-title primary-title>
-          <h2 class="white-text">LOGIN CLIENT</h2>
+          <h2 class="white-text">LOGIN RESTAURANT</h2>
         </v-card-title>
         <v-card-text>
           <v-text-field
@@ -47,7 +47,7 @@
     <v-layout row wrap justify-center align-center class="main" v-else>
       <v-card color="white">
         <v-card-title primary-title>
-          <h2 class="white-text">REGISTER CLIENT</h2>
+          <h2 class="white-text">REGISTER RESTAURANT</h2>
         </v-card-title>
         <v-card-text>
           <v-text-field
@@ -129,6 +129,9 @@ export default {
       axios.post("http://localhost:8080/api/clienti", data).then((res) => {
         console.log(res.data.user);
       });
+    },
+    login() {
+      this.$router.push("/login");
     },
     loginRestaurant() {
       this.$router.push("/login_restaurant");

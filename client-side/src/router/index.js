@@ -6,6 +6,8 @@ import Login from "../components/Login";
 import Restaurante from "../components/Restaurante";
 import Rezervari from "../components/Rezervari";
 import ProdusePage1 from "../components/ProdusePage1";
+import LoginRestaurant from "../components/LoginRestaurant";
+import Restaurant from "../components/Restaurant";
 Vue.use(VueRouter)
 
 const routes = [
@@ -42,6 +44,14 @@ const routes = [
   {
     path: '/produse_page_1',
     component: ProdusePage1
+  },
+  {
+    path: '/login_restaurant',
+    component: LoginRestaurant
+  },
+  {
+    path: '/restaurant',
+    component: Restaurant
   },
 ]
 
