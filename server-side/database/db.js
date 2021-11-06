@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const MONGO_URL = "mongodb+srv://david:david@cluster0.axzcq.mongodb.net/FunCoding";
 const Client = require("../models/Client");
+const Restaurant = require("../models/Restaurant");
 const Rezervare = require("../models/Rezervare");
 class Controller {
   constructor() {
@@ -86,6 +87,88 @@ class Controller {
   }
   deleteClient(res, id) {
     Client.deleteOne(
+      {
+        _id: id,
+      },
+      (err) => {
+        if (err) throw err;
+        res.json({
+          status: 200,
+          message: "Deleted",
+        });
+      }
+    );
+  } 
+  addRestaurant(res, data) {
+    Restaurant.create(data, (err, newUser) => {
+      if (err) throw err;
+      res.json({
+        status: 200,
+        message: "Created",
+        user: newUser,
+      });
+    });
+  }
+  loginRestaurant(res, data) {
+    Restaurant.findOne(
+      {
+        $and: [{ email: data.email }, { parola: data.parola }],
+      },
+      (err, user) => {
+        if (err) throw err;
+        res.json({
+          status: 200,
+          message: "ok",
+          user,
+        });
+      }
+    );
+  }
+  updateRestaurant(res, id, data) {
+    Restaurantt.updateOne(
+      {
+        _id: id,
+      },
+      data,
+      (err, updateUser) => {
+        if (err) throw err;
+        res.json({
+          status: 200,
+          message: "Updated",
+          user: updateUser,
+        });
+      }
+    );  
+  }
+  getRestaurant(res, id) {
+    Restaurant.findOne(
+      {
+        _id: id,
+      },
+      (err, user) => {
+        if (err) throw err;
+        res.json({
+          status: 200,
+          message: "ok",
+          user,
+        });
+      }
+    );
+  }
+  getRestaurante(res) {
+    Restaurant.find(
+      (err, users) => {
+        if (err) throw err;
+        res.json({
+          status: 200,
+          message: "ok",
+          users,
+        });
+      }
+    );
+  }
+  deleteRestaurant(res, id) {
+    Restaurant.deleteOne(
       {
         _id: id,
       },

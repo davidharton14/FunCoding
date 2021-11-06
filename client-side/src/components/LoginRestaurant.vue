@@ -6,7 +6,7 @@
         <v-tabs center-active background-color="green accent-4">
           <v-tab @click="acasa()">Acasa</v-tab>
           <v-tab @click="login()"> Client </v-tab>
-          <v-tab @click="loginRestaurant()"> Restaurant </v-tab>
+          <v-tab> Restaurant </v-tab>
           <v-tab @click="contact()"> Contact </v-tab>
         </v-tabs>
       </v-layout>
@@ -38,7 +38,9 @@
         </v-card-text>
         <v-card-actions>
           <v-layout row wrap justify-center>
-            <v-btn color="green accent-4" @click="login()">Log in</v-btn>
+            <v-btn color="green accent-4" @click="loginRestaurant()"
+              >Log in</v-btn
+            >
             <v-btn color="amber" @click="hasAccount = false">Register</v-btn>
           </v-layout>
         </v-card-actions>
@@ -99,19 +101,19 @@ export default {
     };
   },
   methods: {
-    login() {
+    loginRestaurant() {
       let data = {
         email: this.loginData.email,
         parola: this.loginData.password,
       };
       axios
-        .post("http://localhost:8080/api/login", data)
+        .post("http://localhost:8080/api/login_r", data)
         .then((res) => {
           console.log("asd");
           let user = res.data.user;
           if (user != null) {
-            localStorage.setItem("client", JSON.stringify(user));
-            this.$router.push("/client");
+            localStorage.setItem("restaurant", JSON.stringify(user));
+            this.$router.push("/restaurant");
           }
         })
         .catch((error) => {
@@ -126,15 +128,9 @@ export default {
         telefon: this.registerData.telefon,
         parola: this.registerData.password,
       };
-      axios.post("http://localhost:8080/api/clienti", data).then((res) => {
+      axios.post("http://localhost:8080/api/restaurante", data).then((res) => {
         console.log(res.data.user);
       });
-    },
-    login() {
-      this.$router.push("/login");
-    },
-    loginRestaurant() {
-      this.$router.push("/login_restaurant");
     },
     acasa() {
       this.$router.push("/");
